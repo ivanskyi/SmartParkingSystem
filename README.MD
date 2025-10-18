@@ -152,3 +152,8 @@ Current test coverage includes:
 ## API Versioning
 
 Current version: `v1` (`/api/v1/...`)
+
+## Future Improvements (not implemented yet due to time constraints)
+- Add Swagger/OpenAPI documentation
+- Add logging using `@Slf4j`
+- Add global exception handler and custom exception classes using `@ControllerAdvice` and `@ExceptionHandler`
