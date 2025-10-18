@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "363184d2-5542-431c-904b-e954b3a539de",
+		"name": "SmartParking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5965252"
+	},
+	"item": [
+		{
+			"name": "Lot",
+			"item": [
+				{
+					"name": "Get all lots",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/api/v1/lots",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a lot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"CalmParking\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/api/v1/lots",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete lot",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"firstLot\"\n}"
+						},
+						"url": {
+							"raw": "{{Host}}/api/v1/lots/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lots",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Level",
+			"item": [
+				{
+					"name": "Get levels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/api/v1/lots/1/levels",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lots",
+								"1",
+								"levels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Level",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"floorNumber\": 1  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/api/v1/lots/1/levels",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lots",
+								"1",
+								"levels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove level",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/api/v1/lots/1/levels/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lots",
+								"1",
+								"levels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get level by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/api/v1/lots/2/levels/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lots",
+								"2",
+								"levels",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Slot",
+			"item": [
+				{
+					"name": "Add slot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"slotNumber\": 2,\n  \"type\": \"LARGE\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/api/v1/lots/2/levels/1/slots",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lots",
+								"2",
+								"levels",
+								"1",
+								"slots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove slot",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/api/v1/lots/2/levels/2/slots/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lots",
+								"2",
+								"levels",
+								"2",
+								"slots",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change slot availability",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"available\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/api/v1/lots/2/levels/1/slots/1",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lots",
+								"2",
+								"levels",
+								"1",
+								"slots",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Parking",
+			"item": [
+				{
+					"name": "Check-in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"licensePlate\":\"TRUCK-licensePlate\",\n    \"vehicleType\":\"TRUCK\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/api/v1/parking/sessions",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parking",
+								"sessions"
+							],
+							"query": [
+								{
+									"key": "licensePlate",
+									"value": "LicenseCAR2",
+									"disabled": true
+								},
+								{
+									"key": "vehicleType",
+									"value": "CAR",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sessions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/api/v1/parking/sessions",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parking",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check-out",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/api/v1/parking/sessions/TRUCK-licensePlate/checkout",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"parking",
+								"sessions",
+								"TRUCK-licensePlate",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "Host",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
