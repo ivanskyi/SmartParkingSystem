@@ -8,6 +8,4 @@ import org.mapstruct.Mapper;
 public interface LotMapper {
 
     LotDto toDto(Lot lot);
-
-    Lot toEntity(LotDto lotDto);
 }

@@ -8,6 +8,4 @@ import org.mapstruct.Mapper;
 public interface VehicleMapper {
 
     VehicleDto toDto(Vehicle vehicle);
-
-    Vehicle toEntity(VehicleDto vehicleDto);
 }

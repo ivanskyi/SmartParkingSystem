@@ -1,10 +1,8 @@
 package com.ivanskyi.smartparkingsystem.dto.request;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class UpdateSlotAvailabilityRequestDto {
     private boolean available;
 }

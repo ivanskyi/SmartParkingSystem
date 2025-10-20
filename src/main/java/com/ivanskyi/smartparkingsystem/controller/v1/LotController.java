@@ -29,13 +29,13 @@ public class LotController {
     }
 
     @GetMapping("/{lotId}")
-    public ResponseEntity<LotDto> getById(@PathVariable Long lotId) {
+    public ResponseEntity<LotDto> getById(@PathVariable("lotId") Long lotId) {
         LotDto lot = lotService.getById(lotId);
         return ResponseEntity.ok(lot);
     }
 
     @DeleteMapping("/{lotId}")
-    public ResponseEntity<Void> delete(@PathVariable Long lotId) {
+    public ResponseEntity<Void> delete(@PathVariable("lotId") Long lotId) {
         lotService.delete(lotId);
         return ResponseEntity.noContent().build();
     }

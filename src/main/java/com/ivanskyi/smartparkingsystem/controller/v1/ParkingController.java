@@ -34,7 +34,7 @@ public class ParkingController {
     }
 
     @PostMapping("/{licensePlate}/checkout")
-    public ResponseEntity<CheckOutResponseDto> checkOut(@PathVariable String licensePlate) {
+    public ResponseEntity<CheckOutResponseDto> checkOut(@PathVariable("licensePlate") String licensePlate) {
         Session session = parkingService.checkOut(licensePlate);
         CheckOutResponseDto response = parkingService.mapToCheckOutResponse(session);
         return ResponseEntity.ok(response);

@@ -18,30 +18,30 @@ public class SlotController {
     private final SlotService slotService;
 
     @GetMapping
-    public ResponseEntity<List<SlotDto>> listSlots(@PathVariable Long lotId,
-                                                   @PathVariable Integer floorNumber) {
+    public ResponseEntity<List<SlotDto>> listSlots(@PathVariable("lotId") Long lotId,
+                                                   @PathVariable("floorNumber") Integer floorNumber) {
         return ResponseEntity.ok(slotService.getSlots(lotId, floorNumber));
     }
 
     @PostMapping
-    public ResponseEntity<SlotDto> createSlot(@PathVariable Long lotId,
-                                              @PathVariable Integer floorNumber,
+    public ResponseEntity<SlotDto> createSlot(@PathVariable("lotId") Long lotId,
+                                              @PathVariable("floorNumber") Integer floorNumber,
                                               @RequestBody CreateSlotRequestDto request) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(slotService.addSlotToLevel(lotId, floorNumber, request));
     }
 
     @GetMapping("/{slotNumber}")
-    public ResponseEntity<SlotDto> getSlot(@PathVariable Long lotId,
-                                           @PathVariable Integer floorNumber,
-                                           @PathVariable String slotNumber) {
+    public ResponseEntity<SlotDto> getSlot(@PathVariable("lotId") Long lotId,
+                                           @PathVariable("floorNumber") Integer floorNumber,
+                                           @PathVariable("slotNumber") String slotNumber) {
         return ResponseEntity.ok(slotService.getSlot(lotId, floorNumber, slotNumber));
     }
 
     @PatchMapping("/{slotNumber}")
-    public ResponseEntity<SlotDto> updateAvailability(@PathVariable Long lotId,
-                                                      @PathVariable Integer floorNumber,
-                                                      @PathVariable String slotNumber,
+    public ResponseEntity<SlotDto> updateAvailability(@PathVariable("lotId") Long lotId,
+                                                      @PathVariable("floorNumber") Integer floorNumber,
+                                                      @PathVariable("slotNumber") String slotNumber,
                                                       @RequestBody UpdateSlotAvailabilityRequestDto request) {
         return ResponseEntity.ok(
                 slotService.setSlotAvailability(lotId, floorNumber, slotNumber, request.isAvailable())
@@ -49,9 +49,9 @@ public class SlotController {
     }
 
     @DeleteMapping("/{slotNumber}")
-    public ResponseEntity<Void> deleteSlot(@PathVariable Long lotId,
-                                           @PathVariable Integer floorNumber,
-                                           @PathVariable String slotNumber) {
+    public ResponseEntity<Void> deleteSlot(@PathVariable("lotId") Long lotId,
+                                           @PathVariable("floorNumber") Integer floorNumber,
+                                           @PathVariable("slotNumber") String slotNumber) {
         slotService.removeSlotFromLevel(lotId, floorNumber, slotNumber);
         return ResponseEntity.noContent().build();
     }

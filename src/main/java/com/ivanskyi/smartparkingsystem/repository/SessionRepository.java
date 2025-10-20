@@ -15,10 +15,4 @@ public interface SessionRepository extends JpaRepository<Session, Long> {
     List<Session> findByExitTimeIsNull();
 
     List<Session> findByExitTimeIsNotNull();
-
-    List<Session> findByParkingLotIdAndFloorNumberAndSlotNumberAndExitTimeIsNull(
-            Long parkingLotId,
-            Integer floorNumber,
-            String slotNumber
-    );
 }
